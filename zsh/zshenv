@@ -1,0 +1,26 @@
+# SSHで接続した先で日本語が使えるようにする
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# ScalaのREPLで日本語を使えるようにする
+export JAVA_OPTS="-Dfile.encoding=UTF-8"
+
+# エディタ
+export EDITOR=/usr/local/bin/vim
+
+# ページャ
+export PAGER=/usr/local/bin/vimpager
+export MANPAGER=/usr/local/bin/vimpager
+
+
+# php-version
+export PHP_VERSIONS=${HOME}/local/php/versions
+[ -f $(brew --prefix php-version)/php-version.sh ] && source $(brew --prefix php-version)/php-version.sh && php-version 5.4.0 >/dev/null
+
+# apache-php-version
+export APACHE_PATH=$(brew --prefix)/opt/httpd
+
+source /Users/suin/Dropbox/projects/craftsman/aws/awscli.sh
+
+# go
+export GOPATH=/usr/local/Cellar/go/1.2

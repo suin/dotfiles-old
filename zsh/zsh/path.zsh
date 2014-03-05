@@ -1,0 +1,22 @@
+# 重複する要素を自動的に削除
+typeset -U path cdpath fpath manpath
+
+path=(
+	$HOME/bin(N-/)
+
+	/usr/local/bin(N-/)
+	/usr/local/sbin(N-/)
+
+	/usr/local/share/npm/bin(N-/)
+
+	/usr/local/opt/ruby/bin(N-/) # vagrantより先になっているが、vagrantを使うときは切り替えられるようにしたい
+
+	# /Applications/Vagrant/embedded/bin(N-/) # rbenvより先
+
+	/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/(N-/) # airportコマンドなど
+
+	$GOPATH/bin(N-/)
+
+	$path
+)
+
