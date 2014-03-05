@@ -16,7 +16,7 @@ alias coda="open -a Coda\ 2"
 alias tree="tree -NC" # N: 文字化け対策, C:色をつける
 
 # PhpStorm
-alias edit='open -g -a "/Applications/PhpStorm.app"'
+alias edit='open -g -a "IntelliJ IDEA 13 CE"'
 
 # Selenium
 alias selenium-chrome='java -jar selenium-server-standalone-2.33.0.jar -Dwebdirver.chrome.driver=/Users/suin/lib/chromedriver'
