@@ -91,8 +91,8 @@
 	ll = log --pretty="%s"
 
 	begin = "!f() { git checkout -b issues/$1; }; f"
-	pr = "!f() { branch_name=$(git symbolic-ref --short -q HEAD); ticket_no=$(echo ${branch_name##*/}); git push origin $branch_name; git pull-request -i $ticket_name -h $branch_name; }; f"
-	end = "!f() { branch_name=$(git symbolic-ref --short -q HEAD); git checkout master; git pull --prune; git branch -d $branch_name; }; f"
+	pr = "!f() { branch_name=$(git symbolic-ref --short -q HEAD); ticket_no=$(echo ${branch_name##*/}); git push origin $branch_name; hub pull-request -i $ticket_no -h $branch_name; }; f"
+	done = "!f() { branch_name=$(git symbolic-ref --short -q HEAD); git checkout master; git pull --prune; git branch -d $branch_name; }; f"
 
 [github]
 	user = suin

@@ -13,10 +13,11 @@ path=(
 
 	# /Applications/Vagrant/embedded/bin(N-/) # rbenvより先
 
-	/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/(N-/) # airportコマンドなど
+	/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources(N-/) # airportコマンドなど
+
+	/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin(N-/)
 
 	$GOPATH/bin(N-/)
 
 	$path
 )
-
