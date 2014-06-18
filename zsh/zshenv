@@ -12,15 +12,7 @@ export EDITOR=/usr/local/bin/vim
 export PAGER=/usr/local/bin/vimpager
 export MANPAGER=/usr/local/bin/vimpager
 
-
-# php-version
-export PHP_VERSIONS=${HOME}/local/php/versions
-[ -f $(brew --prefix php-version)/php-version.sh ] && source $(brew --prefix php-version)/php-version.sh && php-version 5.4.0 >/dev/null
-
-# apache-php-version
-export APACHE_PATH=$(brew --prefix)/opt/httpd
-
-source /Users/suin/Dropbox/projects/craftsman/aws/awscli.sh
+source /suin/Dropbox/projects/craftsman/aws/awscli.sh
 
 # go
 export GOPATH=/usr/local/Cellar/go/1.2

@@ -3,8 +3,8 @@ INSTALL_DIR := $(HOME)
 
 all: cui
 
-.PHONY: zsh git tmux sbt vim phpmake tig percol
-cui: zsh git tmux sbt vim phpmake tig percol
+.PHONY: zsh git tmux tmuxinator sbt vim phpmake tig percol
+cui: zsh git tmux tmuxinator sbt vim phpmake tig percol
 
 zsh:
 	ln -fns $(CURRENT_DIR)/zsh/zsh    $(INSTALL_DIR)/.zsh
@@ -17,6 +17,10 @@ git:
 
 tmux:
 	ln -fns $(CURRENT_DIR)/tmux/tmux.conf $(INSTALL_DIR)/.tmux.conf
+
+tmuxinator:
+	mkdir -p $(INSTALL_DIR)/.tmuxinator
+	ln -fns $(CURRENT_DIR)/tmuxinator $(INSTALL_DIR)/.tmuxinator
 
 sbt:
 	mkdir -p $(INSTALL_DIR)/.sbt/plugins
