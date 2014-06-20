@@ -16,3 +16,6 @@ source /suin/Dropbox/projects/craftsman/aws/awscli.sh
 
 # go
 export GOPATH=/usr/local/Cellar/go/1.2
+
+# Homebrew cask でインストールしたAtom用
+export ATOM_PATH=~/Applications
