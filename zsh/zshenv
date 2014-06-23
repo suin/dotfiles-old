@@ -19,3 +19,6 @@ export GOPATH=/usr/local/Cellar/go/1.2
 
 # Homebrew cask でインストールしたAtom用
 export ATOM_PATH=~/Applications
+
+# boot2docker
+export DOCKER_HOST=tcp://127.0.0.1:2375
