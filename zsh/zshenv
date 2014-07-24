@@ -12,13 +12,16 @@ export EDITOR=/usr/local/bin/vim
 export PAGER=/usr/local/bin/vimpager
 export MANPAGER=/usr/local/bin/vimpager
 
-source /suin/Dropbox/projects/craftsman/aws/awscli.sh
+source /open/craftsman-aws/awscli.sh
 
 # go
-export GOPATH=/usr/local/Cellar/go/1.3
+export GOPATH=/Users/suin/go
 
 # Homebrew cask でインストールしたAtom用
 export ATOM_PATH=~/Applications
 
 # boot2docker
 export DOCKER_HOST=tcp://127.0.0.1:2375
+
+# VMWareFusionのイメージを
+export VAGRANT_VMWARE_CLONE_DIRECTORY=/suin/vagrant-vmware-images
