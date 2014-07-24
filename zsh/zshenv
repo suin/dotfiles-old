@@ -23,5 +23,5 @@ export ATOM_PATH=~/Applications
 # boot2docker
 export DOCKER_HOST=tcp://127.0.0.1:2375
 
-# VMWareFusionのイメージを
+# VMWareFusionのイメージを.vagrantの中に作らないようにする
 export VAGRANT_VMWARE_CLONE_DIRECTORY=/suin/vagrant-vmware-images
