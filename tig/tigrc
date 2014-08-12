@@ -5,8 +5,8 @@ set vertical-split = yes
 set wrap-lines = no
 
 # tig blameで行数表示をデフォルトにする	
-set show-line-numbers = yes
-set line-number-interval = 1
+# set show-line-numbers = yes
+# set line-number-interval = 1
 
 bind diff ; view-next
 bind diff l scroll-right
