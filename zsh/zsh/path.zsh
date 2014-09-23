@@ -17,7 +17,7 @@ path=(
 
 	/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin(N-/)
 
-	/usr/local/share/python(N-/) # brew pip
+	# /usr/local/share/python(N-/) # brew pip
 
 	$GOPATH/bin(N-/)
 
