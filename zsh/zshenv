@@ -29,4 +29,4 @@ export VAGRANT_VMWARE_CLONE_DIRECTORY=/suin/vagrant-vmware-images
 export SHOULDBEE_USERNAME=suin
 export SHOULDBEE_PASSWORD=fe2swil2ag7no9gr
 
-export GIT_FORGOT_DIR="/open/* /open/shouldbee-devops/*"
+export GIT_FORGOT_DIR="/open/* /open/shouldbee/*"
