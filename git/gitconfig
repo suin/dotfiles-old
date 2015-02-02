@@ -1,5 +1,5 @@
 [user]
-	name = "suin"
+	name = suin
 	email = suinyeze@gmail.com
 
 [apply]
@@ -19,7 +19,7 @@
 	new = green bold
 
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/suin/.gitignore
 	pager = less -r
 	quotepath = false
 	editor = /usr/bin/vim
@@ -122,5 +122,12 @@
 [push]
 	default = simple
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
