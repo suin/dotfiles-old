@@ -15,7 +15,7 @@ export MANPAGER=/usr/local/bin/vimpager
 source /open/craftsman-aws/awscli.sh
 
 # go
-export GOPATH=/Users/suin/go
+export GOPATH=/Users/suin/go:/open/golang
 
 # Homebrew cask でインストールしたAtom用
 export ATOM_PATH=~/Applications
