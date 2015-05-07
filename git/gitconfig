@@ -1,5 +1,5 @@
 [user]
-	name = suin
+	name = Hidehito Nozawa
 	email = suinyeze@gmail.com
 
 [apply]
@@ -127,7 +127,7 @@
 	smudge = git media smudge %f
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
