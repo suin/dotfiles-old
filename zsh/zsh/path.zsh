@@ -19,7 +19,7 @@ path=(
 
 	# /usr/local/share/python(N-/) # brew pip
 
-	$GOPATH/bin(N-/)
+	$HOME/go/bin(N-/)
 
 	$path
 )
