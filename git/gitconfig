@@ -30,7 +30,7 @@
 [alias]
 	b = branch
 	br = branch -a
-	ci = commit -v
+	ci = commit -vs
 	cia = commit --amend
 	cih = commit --amend -C HEAD
 	co = checkout
