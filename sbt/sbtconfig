@@ -1,1 +1,1 @@
-SBT_OPTS="-Dfile.encoding=UTF-8 -Xmx512M -XX:MaxPermSize=512m -XX:ReservedCodeCacheSize=128m"
+SBT_OPTS="-Xmx4G -XX:PermSize=256M -XX:MaxPermSize=4G -Dfile.encoding=UTF-8"
