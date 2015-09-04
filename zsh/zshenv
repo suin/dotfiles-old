@@ -30,3 +30,9 @@ export SHOULDBEE_USERNAME=suin
 export SHOULDBEE_PASSWORD=fe2swil2ag7no9gr
 
 export GIT_FORGOT_DIR="/open/* /open/shouldbee/*"
+
+# Caffe用
+export PYENV_ROOT="$HOME/.pyenv"  
+export PATH="$PYENV_ROOT/bin:$PATH"  
+eval "$(pyenv init -)"  
+
