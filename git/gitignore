@@ -33,8 +33,8 @@ Thumbs.db
 
 # Java & Scala build files #
 ############################
-/target
-/project
+#/target
+#/project
 
 # Other VCSes #
 ###############
