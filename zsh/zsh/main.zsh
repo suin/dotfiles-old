@@ -8,7 +8,6 @@ done
 
 # load config
 source $ZSH_HOME/options.zsh
-source $ZSH_HOME/path.zsh
 source $ZSH_HOME/prompt.zsh
 source $ZSH_HOME/aliases.zsh
 source $ZSH_HOME/key-bindings.zsh
