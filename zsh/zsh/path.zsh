@@ -6,6 +6,7 @@ path=(
 
 	/usr/local/bin(N-/)
 	/usr/local/sbin(N-/)
+	/usr/local/dbin(N-/)
 
 	/usr/local/share/npm/bin(N-/)
 
