@@ -35,6 +35,6 @@ PROMPT+="%F{blue}%~%f"
 PROMPT+="\$(vcs_prompt_info)"
 PROMPT+="
 "
-PROMPT+="%% "
+PROMPT+="\$ "
 
-RPROMPT="[%*]"
+# RPROMPT="[%*]"

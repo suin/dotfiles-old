@@ -20,4 +20,3 @@ alias edit='open -g -a "IntelliJ IDEA 13 CE"'
 
 # Selenium
 alias selenium-chrome='java -jar selenium-server-standalone-2.33.0.jar -Dwebdirver.chrome.driver=/Users/suin/lib/chromedriver'
-

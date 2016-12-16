@@ -1,1 +1,0 @@
-SBT_OPTS="-Xmx4G -XX:PermSize=256M -XX:MaxPermSize=4G -Dfile.encoding=UTF-8"
