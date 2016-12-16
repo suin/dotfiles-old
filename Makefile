@@ -3,12 +3,15 @@ INSTALL_DIR := $(HOME)
 
 all: cui
 
-.PHONY: git karabiner percol tig tmux tmuxinator vim zsh
+.PHONY: git hammerspoon karabiner percol tig tmux tmuxinator vim zsh
 cui: .PHONY
 
 git:
 	ln -fns $(CURRENT_DIR)/git/gitconfig $(INSTALL_DIR)/.gitconfig
 	ln -fns $(CURRENT_DIR)/git/gitignore $(INSTALL_DIR)/.gitignore
+
+hammerspoon:
+	ln -fns $(CURRENT_DIR)/hammerspoon $(INSTALL_DIR)/.hammerspoon
 
 karabiner:
 	mkdir -p $(INSTALL_DIR)/.karabiner.d/configuration
