@@ -94,10 +94,6 @@
 	pr = "!f() { branch_name=$(git symbolic-ref --short -q HEAD); ticket_no=$(echo ${branch_name##*/}); git push origin $branch_name; hub pull-request -i $ticket_no -h $branch_name; }; f"
 	done = "!f() { branch_name=$(git symbolic-ref --short -q HEAD); git checkout master; git pull --prune; git branch -d $branch_name; }; f"
 
-[github]
-	user = suin
-	token = 012cead5d3e595e22449a8a62b0059d7
-
 [http]
 	sslverify = false
 
