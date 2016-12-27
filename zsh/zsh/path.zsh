@@ -12,5 +12,6 @@ path=(
 
 cdpath=(
 	$HOME/Dropbox/open(N-/)
+	$HOME/Dropbox/projects(N-/)
 	$cdpath
 )

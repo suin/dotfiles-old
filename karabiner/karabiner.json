@@ -19,9 +19,7 @@
             "name": "Default profile",
             "selected": true,
             "simple_modifications": {
-                "caps_lock": "left_control",
-                "delete_forward": "vk_none",
-                "delete_or_backspace": "vk_none"
+                "caps_lock": "left_control"
             }
         }
     ]
