@@ -23,4 +23,4 @@ export GOPATH=/Users/suin/go:/open/golang
 # docker-compose
 export COMPOSE_FILE=docker-compose.development.yml
 
-export GIT_FORGOT_DIR="/open/* /open/shouldbee/*"
+export GIT_FORGOT_DIR="$HOME/Dropbox/open/* $HOME/Dropbox/projects/*"
