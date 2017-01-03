@@ -1,1 +1,76 @@
-source $HOME/.zsh/main.zsh
+# source $HOME/.zsh/main.zsh
+
+: "Options" && {
+  autoload -U compinit && compinit # 補完機能の強化
+  setopt correct # 入力しているコマンド名が間違っている場合にもしかして：を出す。
+  setopt nobeep # ビープを鳴らさない
+  setopt prompt_subst # 色を使う
+  setopt ignoreeof # ^Dでログアウトしない。
+  setopt no_tify # バックグラウンドジョブが終了したらすぐに知らせる。
+  setopt hist_ignore_dups # 直前と同じコマンドをヒストリに追加しない
+  unsetopt auto_menu # タブによるファイルの順番切り替えをしない
+  setopt auto_pushd # cd -[tab]で過去のディレクトリにひとっ飛びできるようにする
+  setopt auto_cd # ディレクトリ名を入力するだけでcdできるようにする
+}
+
+: "Prompt" && {
+  autoload -U promptinit && promptinit
+  autoload -Uz colors && colors
+  autoload -Uz vcs_info
+  autoload -Uz is-at-least
+
+  : "Showing VCS status at propt" && {
+    zstyle ":vcs_info:*" enable git svn hg bzr
+    zstyle ":vcs_info:*" formats "(%s)-[%b]"
+    zstyle ":vcs_info:*" actionformats "(%s)-[%b|%a]"
+    zstyle ":vcs_info:(svn|bzr):*" branchformat "%b:r%r"
+    zstyle ":vcs_info:bzr:*" use-simple true
+
+    zstyle ":vcs_info:*" max-exports 6
+
+    if is-at-least 4.3.10; then
+      zstyle ":vcs_info:git:*" check-for-changes true # commitしていないのをチェック
+      zstyle ":vcs_info:git:*" stagedstr "<S>"
+      zstyle ":vcs_info:git:*" unstagedstr "<U>"
+      zstyle ":vcs_info:git:*" formats "(%b) %c%u"
+      zstyle ":vcs_info:git:*" actionformats "(%s)-[%b|%a] %c%u"
+    fi
+
+    function vcs_prompt_info() {
+      LANG=en_US.UTF-8 vcs_info
+      [[ -n "$vcs_info_msg_0_" ]] && echo -n " %{$fg[yellow]%}$vcs_info_msg_0_%f"
+    }
+  }
+
+  : "Prompt format settings" && {
+    OK="🍀 "
+    NG="🔥 "
+    PROMPT=""
+    PROMPT+="%(?.%F{green}$OK%f.%F{red}$NG%f) "
+    PROMPT+="%F{blue}%~%f"
+    PROMPT+="\$(vcs_prompt_info)"
+    PROMPT+=$'\n'
+    PROMPT+="\$ "
+  }
+}
+
+: "Aliases" && {
+  alias ls="ls -G" # color for darwin
+  alias l="ls -la"
+  alias la="ls -la"
+  alias l1="ls -1"
+  alias tree="tree -NC" # N: 文字化け対策, C:色をつける
+  alias cot="open -a CotEditor"
+}
+
+: "Key bindings" && {
+  bindkey -e # emacs キーマップを選択
+  function dig-directory() { cd .. && zle reset-prompt }
+  zle -N dig-directory
+  bindkey '^K' dig-directory # Ctrl-Kで上のディレクトリに上がる
+  bindkey "^R" history-incremental-search-backward
+}
+
+: "Misc" && {
+  function chpwd() { tree -L 1 } # cdしたあとで、ファイルを表示する
+}
