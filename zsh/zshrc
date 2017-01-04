@@ -1,5 +1,3 @@
-# source $HOME/.zsh/main.zsh
-
 : "Options" && {
   autoload -U compinit && compinit # 補完機能の強化
   setopt correct # 入力しているコマンド名が間違っている場合にもしかして：を出す。
@@ -14,44 +12,8 @@
 }
 
 : "Prompt" && {
-  autoload -U promptinit && promptinit
-  autoload -Uz colors && colors
-  autoload -Uz vcs_info
-  autoload -Uz is-at-least
-
-  : "Showing VCS status at propt" && {
-    zstyle ":vcs_info:*" enable git svn hg bzr
-    zstyle ":vcs_info:*" formats "(%s)-[%b]"
-    zstyle ":vcs_info:*" actionformats "(%s)-[%b|%a]"
-    zstyle ":vcs_info:(svn|bzr):*" branchformat "%b:r%r"
-    zstyle ":vcs_info:bzr:*" use-simple true
-
-    zstyle ":vcs_info:*" max-exports 6
-
-    if is-at-least 4.3.10; then
-      zstyle ":vcs_info:git:*" check-for-changes true # commitしていないのをチェック
-      zstyle ":vcs_info:git:*" stagedstr "<S>"
-      zstyle ":vcs_info:git:*" unstagedstr "<U>"
-      zstyle ":vcs_info:git:*" formats "(%b) %c%u"
-      zstyle ":vcs_info:git:*" actionformats "(%s)-[%b|%a] %c%u"
-    fi
-
-    function vcs_prompt_info() {
-      LANG=en_US.UTF-8 vcs_info
-      [[ -n "$vcs_info_msg_0_" ]] && echo -n " %{$fg[yellow]%}$vcs_info_msg_0_%f"
-    }
-  }
-
-  : "Prompt format settings" && {
-    OK="🍀 "
-    NG="🔥 "
-    PROMPT=""
-    PROMPT+="%(?.%F{green}$OK%f.%F{red}$NG%f) "
-    PROMPT+="%F{blue}%~%f"
-    PROMPT+="\$(vcs_prompt_info)"
-    PROMPT+=$'\n'
-    PROMPT+="\$ "
-  }
+  autoload -U promptinit && promptinit # プロンプトのテーマを使えるようにする拡張
+  prompt pure # Pretty, minimal and fast ZSH prompt. https://github.com/sindresorhus/pure
 }
 
 : "Aliases" && {
