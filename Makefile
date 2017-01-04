@@ -3,7 +3,7 @@ INSTALL_DIR := $(HOME)
 
 all: cui
 
-.PHONY: git hammerspoon percol tig tmux tmuxinator vim zsh hushlogin
+.PHONY: git hammerspoon tig tmux tmuxinator vim zsh hushlogin
 cui: .PHONY
 
 git:
@@ -12,9 +12,6 @@ git:
 
 hammerspoon:
 	ln -fns $(CURRENT_DIR)/hammerspoon $(INSTALL_DIR)/.hammerspoon
-
-percol:
-	ln -fns $(CURRENT_DIR)/percol/percol.d $(INSTALL_DIR)/.percol.d
 
 tig:
 	ln -fns $(CURRENT_DIR)/tig/tigrc $(INSTALL_DIR)/.tigrc
