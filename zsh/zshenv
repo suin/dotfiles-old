@@ -2,17 +2,17 @@
   typeset -U path cdpath fpath manpath # 重複する要素を自動的に削除
 
   path=(
-  	$HOME/bin(N-/)
-  	/usr/local/bin(N-/)
-  	/usr/local/sbin(N-/)
-  	$HOME/go/bin(N-/)
-  	$path
+    $HOME/bin(N-/)
+    /usr/local/bin(N-/)
+    /usr/local/sbin(N-/)
+    $HOME/go/bin(N-/)
+    $path
   )
 
   cdpath=(
-  	$HOME/Dropbox/open(N-/)
-  	$HOME/Dropbox/projects(N-/)
-  	$cdpath
+    $HOME/Dropbox/open(N-/)
+    $HOME/Dropbox/projects(N-/)
+    $cdpath
   )
 }
 
