@@ -3,7 +3,7 @@ INSTALL_DIR := $(HOME)
 
 all: cui
 
-.PHONY: git hammerspoon karabiner percol tig tmux tmuxinator vim zsh
+.PHONY: git hammerspoon percol tig tmux tmuxinator vim zsh
 cui: .PHONY
 
 git:
@@ -12,10 +12,6 @@ git:
 
 hammerspoon:
 	ln -fns $(CURRENT_DIR)/hammerspoon $(INSTALL_DIR)/.hammerspoon
-
-karabiner:
-	mkdir -p $(INSTALL_DIR)/.karabiner.d/configuration
-	ln -fns $(CURRENT_DIR)/karabiner/karabiner.json $(INSTALL_DIR)/.karabiner.d/configuration/karabiner.json
 
 percol:
 	ln -fns $(CURRENT_DIR)/percol/percol.d $(INSTALL_DIR)/.percol.d
@@ -34,6 +30,5 @@ vim:
 	ln -fns $(CURRENT_DIR)/vim       $(INSTALL_DIR)/.vim
 
 zsh:
-	ln -fns $(CURRENT_DIR)/zsh/zsh    $(INSTALL_DIR)/.zsh
 	ln -fns $(CURRENT_DIR)/zsh/zshrc  $(INSTALL_DIR)/.zshrc
 	ln -fns $(CURRENT_DIR)/zsh/zshenv $(INSTALL_DIR)/.zshenv
