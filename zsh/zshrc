@@ -71,6 +71,10 @@
   bindkey "^R" history-incremental-search-backward
 }
 
+: "External configs" && {
+  [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+}
+
 : "Misc" && {
   function chpwd() { tree -L 1 } # cdしたあとで、ファイルを表示する
 }
