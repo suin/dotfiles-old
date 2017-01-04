@@ -1,4 +1,4 @@
-: "Options" && {
+: "オプション" && {
   autoload -U compinit && compinit # 補完機能の強化
   setopt correct # 入力しているコマンド名が間違っている場合にもしかして：を出す。
   setopt nobeep # ビープを鳴らさない
@@ -6,7 +6,8 @@
   unsetopt auto_menu # タブによるファイルの順番切り替えをしない
   setopt auto_pushd # cd -[tab]で過去のディレクトリにひとっ飛びできるようにする
   setopt auto_cd # ディレクトリ名を入力するだけでcdできるようにする
-  : "Histories" && {
+
+  : "ヒストリ" && {
     HISTFILE=$HOME/.zsh_history # ヒストリファイル名
     HISTSIZE=10000 # メモリに保存される履歴の件数
     SAVEHIST=10000 # 履歴ファイルに保存される履歴の件数
@@ -17,7 +18,8 @@
     setopt hist_reduce_blanks # 余分な空白は詰めて記録
     setopt hist_verify # `!!`を実行したときにいきなり実行せずコマンドを見せる
   }
-  : "Key bindings" && {
+
+  : "キーバインディング" && {
     bindkey -e # emacs キーマップを選択
     function cd-up () { zle push-line && LBUFFER='builtin cd ..' && zle accept-line }
     zle -N cd-up
@@ -27,7 +29,7 @@
   }
 }
 
-: "Aliases" && {
+: "エイリアス" && {
   alias ls="ls -G" # color for darwin
   alias l="ls -la"
   alias la="ls -la"
@@ -35,7 +37,7 @@
   alias tree="tree -NC" # N: 文字化け対策, C:色をつける
 }
 
-: "Plugins" && {
+: "プラグイン" && {
   export ZPLUG_HOME=/usr/local/opt/zplug
   source $ZPLUG_HOME/init.zsh
   zplug "zsh-users/zsh-completions" # Additional completion definitions for Zsh. https://github.com/zsh-users/zsh-completions
@@ -55,4 +57,8 @@
 : "cdした後にファイル一覧を表示する" && {
   [ -z "$ENHANCD_ROOT" ] && function chpwd() { tree -L 1 } # enhancdがない場合
   [ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="tree -L 1" # enhancdがあるときはそのHook機構を使う
+}
+
+: "sshコマンド補完を~/.ssh/configから行う" && {
+  function _ssh { compadd `fgrep 'Host ' ~/.ssh/config.* | grep -v '*' |  awk '{print $2}' | sort` }
 }

@@ -1,4 +1,4 @@
-: "Paths" && {
+: "パス" && {
   typeset -U path cdpath fpath manpath # 重複する要素を自動的に削除
 
   path=(
@@ -16,7 +16,7 @@
   )
 }
 
-: "Environment variables" && {
+: "環境変数" && {
   export LC_CTYPE=en_US.UTF-8 # SSHで接続した先で日本語が使えるようにする
   export LC_ALL=en_US.UTF-8   # SSHで接続した先で日本語が使えるようにする
   export JAVA_OPTS="-Dfile.encoding=UTF-8" # ScalaのREPLで日本語を使えるようにする
