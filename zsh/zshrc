@@ -30,6 +30,7 @@
 : "Plugins" && {
   export ZPLUG_HOME=/usr/local/opt/zplug
   source $ZPLUG_HOME/init.zsh
+  zplug "zsh-users/zsh-completions" # Additional completion definitions for Zsh. https://github.com/zsh-users/zsh-completions
   zplug "mafredri/zsh-async" # "sindresorhus/pure"が依存している
   zplug "sindresorhus/pure", use:pure.zsh, as:theme # Pretty, minimal and fast ZSH prompt. https://github.com/sindresorhus/pure
   zplug "zsh-users/zsh-syntax-highlighting", defer:2 # Fish shell-like like syntax highlighting for Zsh. https://github.com/zsh-users/zsh-syntax-highlighting
