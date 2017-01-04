@@ -21,7 +21,7 @@
 
   : "キーバインディング" && {
     bindkey -e # emacs キーマップを選択
-    function cd-up () { zle push-line && LBUFFER='builtin cd ..' && zle accept-line }
+    function cd-up { zle push-line && LBUFFER='builtin cd ..' && zle accept-line }
     zle -N cd-up
     bindkey "^Y" cd-up # Ctrl-Yで上のディレクトリに上がる
     setopt ignoreeof # ^Dでログアウトしない。
@@ -55,7 +55,7 @@
 }
 
 : "cdした後にファイル一覧を表示する" && {
-  [ -z "$ENHANCD_ROOT" ] && function chpwd() { tree -L 1 } # enhancdがない場合
+  [ -z "$ENHANCD_ROOT" ] && function chpwd { tree -L 1 } # enhancdがない場合
   [ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="tree -L 1" # enhancdがあるときはそのHook機構を使う
 }
 
