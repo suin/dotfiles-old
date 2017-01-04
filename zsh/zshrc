@@ -35,6 +35,7 @@
   alias la="ls -la"
   alias l1="ls -1"
   alias tree="tree -NC" # N: 文字化け対策, C:色をつける
+  alias -g and="|" # パイプが遠いのでandを割り当てる
 }
 
 : "プラグイン" && {
