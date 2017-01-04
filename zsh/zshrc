@@ -39,11 +39,6 @@
   zplug load
 }
 
-: "Prompt" && {
-  autoload -U promptinit && promptinit # プロンプトのテーマを使えるようにする拡張
-  # prompt pure # Pretty, minimal and fast ZSH prompt. https://github.com/sindresorhus/pure
-}
-
 : "Misc" && {
   function chpwd() { tree -L 1 } # cdしたあとで、ファイルを表示する
 }
