@@ -5,7 +5,6 @@
   	$HOME/bin(N-/)
   	/usr/local/bin(N-/)
   	/usr/local/sbin(N-/)
-  	/usr/local/dbin(N-/)
   	$HOME/go/bin(N-/)
   	$path
   )

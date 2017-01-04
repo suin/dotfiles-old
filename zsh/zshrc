@@ -2,13 +2,29 @@
   autoload -U compinit && compinit # 補完機能の強化
   setopt correct # 入力しているコマンド名が間違っている場合にもしかして：を出す。
   setopt nobeep # ビープを鳴らさない
-  setopt prompt_subst # 色を使う
-  setopt ignoreeof # ^Dでログアウトしない。
   setopt no_tify # バックグラウンドジョブが終了したらすぐに知らせる。
-  setopt hist_ignore_dups # 直前と同じコマンドをヒストリに追加しない
   unsetopt auto_menu # タブによるファイルの順番切り替えをしない
   setopt auto_pushd # cd -[tab]で過去のディレクトリにひとっ飛びできるようにする
   setopt auto_cd # ディレクトリ名を入力するだけでcdできるようにする
+  : "Histories" && {
+    HISTFILE=$HOME/.zsh_history # ヒストリファイル名
+    HISTSIZE=10000 # メモリに保存される履歴の件数
+    SAVEHIST=10000 # 履歴ファイルに保存される履歴の件数
+    setopt hist_ignore_dups # 直前と同じコマンドをヒストリに追加しない
+    setopt hist_ignore_all_dups # 重複するコマンドは古い法を削除する
+    setopt share_history # 異なるウィンドウでコマンドヒストリを共有する
+    setopt hist_no_store # historyコマンドは履歴に登録しない
+    setopt hist_reduce_blanks # 余分な空白は詰めて記録
+    setopt hist_verify # `!!`を実行したときにいきなり実行せずコマンドを見せる
+  }
+  : "Key bindings" && {
+    bindkey -e # emacs キーマップを選択
+    function cd-up () { zle push-line && LBUFFER='builtin cd ..' && zle accept-line }
+    zle -N cd-up
+    bindkey "^Y" cd-up # Ctrl-Yで上のディレクトリに上がる
+    setopt ignoreeof # ^Dでログアウトしない。
+    autoload -U select-word-style && select-word-style bash # Ctrl-Wでパスの文字列などをスラッシュ単位でdeleteできる
+  }
 }
 
 : "Aliases" && {
@@ -17,13 +33,6 @@
   alias la="ls -la"
   alias l1="ls -1"
   alias tree="tree -NC" # N: 文字化け対策, C:色をつける
-}
-
-: "Key bindings" && {
-  bindkey -e # emacs キーマップを選択
-  function dig-directory() { cd .. && zle reset-prompt }
-  zle -N dig-directory
-  bindkey '^K' dig-directory # Ctrl-Kで上のディレクトリに上がる
 }
 
 : "Plugins" && {
