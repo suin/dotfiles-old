@@ -3,7 +3,7 @@ INSTALL_DIR := $(HOME)
 
 all: cui
 
-.PHONY: git hammerspoon percol tig tmux tmuxinator vim zsh
+.PHONY: git hammerspoon percol tig tmux tmuxinator vim zsh hushlogin
 cui: .PHONY
 
 git:
@@ -32,3 +32,6 @@ vim:
 zsh:
 	ln -fns $(CURRENT_DIR)/zsh/zshrc  $(INSTALL_DIR)/.zshrc
 	ln -fns $(CURRENT_DIR)/zsh/zshenv $(INSTALL_DIR)/.zshenv
+
+hushlogin:
+	touch $(INSTALL_DIR)/.hushlogin # ターミナル1行目の「Last login:」表示を消す. http://vorfee.hatenablog.jp/entry/2015/02/23/033313
