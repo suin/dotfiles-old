@@ -45,7 +45,7 @@
   zplug "supercrabtree/k" # Directory listings for zsh with git features. https://github.com/supercrabtree/k
   zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf # A command-line fuzzy finder written in Go. https://github.com/junegunn/fzf
   zplug "junegunn/fzf", as:command, use:bin/fzf-tmux # script for launching fzf in a tmux pane
-  zplug "junegunn/fzf", use:shell/key-bindings.zsh # Ctrl-Rで履歴検索してコマンドを実行できる
+  zplug "junegunn/fzf", use:shell/key-bindings.zsh # Ctrl-Rで履歴検索、Ctrl-Tでファイル名検索補完できる
   zplug "junegunn/fzf", use:shell/completion.zsh # cd **[TAB], vim **[TAB]などでファイル名を補完できる
   zplug "b4b4r07/enhancd", use:init.sh # A next-generation cd command with an interactive filter. https://github.com/b4b4r07/enhancd
   zplug check || zplug install
