@@ -51,6 +51,7 @@
   zplug "junegunn/fzf", use:shell/key-bindings.zsh # Ctrl-Rで履歴検索、Ctrl-Tでファイル名検索補完できる
   zplug "junegunn/fzf", use:shell/completion.zsh # cd **[TAB], vim **[TAB]などでファイル名を補完できる
   zplug "b4b4r07/enhancd", use:init.sh # A next-generation cd command with an interactive filter. https://github.com/b4b4r07/enhancd
+  zplug 'b4b4r07/gomi', as:command, from:gh-r # gomi is a simple trash tool that works on CLI, written in golang. https://github.com/b4b4r07/gomi
   zplug check || zplug install
   zplug load
 }
