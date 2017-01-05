@@ -3,7 +3,7 @@ local function keyCode(key, modifiers)
    return function()
       hs.eventtap.event.newKeyEvent(modifiers, string.lower(key), true):post()
       hs.timer.usleep(1000)
-      hs.eventtap.event.newKeyEvent(modifiers, string.lower(key), false):post()      
+      hs.eventtap.event.newKeyEvent(modifiers, string.lower(key), false):post()
    end
 end
 
@@ -41,8 +41,10 @@ remapKey({'ctrl'}, 'p', keyCode('up'))
 remapKey({'ctrl'}, 'n', keyCode('down'))
 remapKey({'ctrl'}, 'h', keyCode('delete'))
 remapKey({'ctrl'}, 'u', keyCode('delete', {'cmd'}))
+
+-- Ctrl-M でリターン
 remapKey({'ctrl'}, 'm', keyCode('return'))
 remapKey({'ctrl', 'cmd'}, 'm', keyCode('return', {'cmd'}))
 remapKey({'ctrl', 'alt'}, 'm', keyCode('return', {'alt'}))
-remapKey({'cmd'}, 'm', keyCode('f20'))
-
+remapKey({'ctrl', 'shift'}, 'm', keyCode('return', {'shift'}))
+remapKey({'cmd'}, 'm', keyCode('f20')) -- ⌘Mの誤打が多いので無効化する
