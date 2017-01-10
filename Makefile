@@ -6,6 +6,10 @@ all: cui
 .PHONY: git hammerspoon tig tmux tmuxinator vim zsh hushlogin
 cui: .PHONY
 
+setup:
+	./setup-homebrew.sh
+	./setup-file-icons.sh
+
 git:
 	ln -fns $(CURRENT_DIR)/git/gitconfig $(INSTALL_DIR)/.gitconfig
 	ln -fns $(CURRENT_DIR)/git/gitignore $(INSTALL_DIR)/.gitignore
