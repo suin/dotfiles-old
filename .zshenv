@@ -9,6 +9,11 @@
     $path
   )
 
+  path=(
+    $(yarn global bin)(N-/) # yarnでインストールしたコマンド
+    $path
+  )
+
   cdpath=(
     $HOME/Dropbox/open(N-/)
     $HOME/Dropbox/projects(N-/)

@@ -6,7 +6,8 @@ dotfiles:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
 commands:
-	./setup-homebrew.sh
+	./install-commands-via-homebrew.sh
+	./install-commands-via-go-get.sh
 
 more:
 	./setup-file-icons.sh

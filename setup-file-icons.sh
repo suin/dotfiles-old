@@ -3,7 +3,7 @@
 set -eux
 
 : "Check if fileicon exists" && {
-  command -v fileicon > /dev/null || npm -g install fileicon
+  command -v fileicon > /dev/null || yarn global add fileicon
 }
 
 : "Set file icons" && {
