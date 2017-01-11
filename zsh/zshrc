@@ -22,7 +22,7 @@
   : "キーバインディング" && {
     bindkey -e # emacs キーマップを選択
     function cd-up { zle push-line && LBUFFER='builtin cd ..' && zle accept-line }
-    zle -N cd-up
+    zle -N cd-up # Zsh Line Editorに上記コマンドを登録
     bindkey "^Y" cd-up # Ctrl-Yで上のディレクトリに上がる
     setopt ignoreeof # ^Dでログアウトしない。
     autoload -U select-word-style && select-word-style bash # Ctrl-Wでパスの文字列などをスラッシュ単位でdeleteできる
@@ -30,7 +30,7 @@
 }
 
 : "エイリアス" && {
-  alias ls="ls -G" # color for darwin
+  alias ls="ls -G" # macOSでlsコマンドに色を付ける
   alias l="ls -la"
   alias la="ls -la"
   alias l1="ls -1"
@@ -40,18 +40,19 @@
 
 : "プラグイン" && {
   export ZPLUG_HOME=/usr/local/opt/zplug
+  [ -f "$ZPLUG_HOME/init.zsh" ] || brew install zplug # zplugはHomebrewからインストール
   source $ZPLUG_HOME/init.zsh
-  zplug "zsh-users/zsh-completions" # Additional completion definitions for Zsh. https://github.com/zsh-users/zsh-completions
+  zplug "zsh-users/zsh-completions" # 多くのコマンドに対応する入力補完 … https://github.com/zsh-users/zsh-completions
   zplug "mafredri/zsh-async" # "sindresorhus/pure"が依存している
-  zplug "sindresorhus/pure", use:pure.zsh, as:theme # Pretty, minimal and fast ZSH prompt. https://github.com/sindresorhus/pure
-  zplug "zsh-users/zsh-syntax-highlighting", defer:2 # Fish shell-like like syntax highlighting for Zsh. https://github.com/zsh-users/zsh-syntax-highlighting
-  zplug "supercrabtree/k" # Directory listings for zsh with git features. https://github.com/supercrabtree/k
-  zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf # A command-line fuzzy finder written in Go. https://github.com/junegunn/fzf
-  zplug "junegunn/fzf", as:command, use:bin/fzf-tmux # script for launching fzf in a tmux pane
+  zplug "sindresorhus/pure", use:pure.zsh, as:theme # 美しく最小限で高速なプロンプト … https://github.com/sindresorhus/pure
+  zplug "zsh-users/zsh-syntax-highlighting", defer:2 # fishシェル風のシンタクスハイライト … https://github.com/zsh-users/zsh-syntax-highlighting
+  zplug "supercrabtree/k" # git情報を含んだファイルリストを表示するコマンド … https://github.com/supercrabtree/k
+  zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf # あいまい検索ができるコマンド … https://github.com/junegunn/fzf
+  zplug "junegunn/fzf", as:command, use:bin/fzf-tmux # tmuxでfzfを使えるようにするプラグイン
   zplug "junegunn/fzf", use:shell/key-bindings.zsh # Ctrl-Rで履歴検索、Ctrl-Tでファイル名検索補完できる
   zplug "junegunn/fzf", use:shell/completion.zsh # cd **[TAB], vim **[TAB]などでファイル名を補完できる
-  zplug "b4b4r07/enhancd", use:init.sh # A next-generation cd command with an interactive filter. https://github.com/b4b4r07/enhancd
-  zplug 'b4b4r07/gomi', as:command, from:gh-r # gomi is a simple trash tool that works on CLI, written in golang. https://github.com/b4b4r07/gomi
+  zplug "b4b4r07/enhancd", use:init.sh # cdコマンドをインタラクティブにするプラグイン … https://github.com/b4b4r07/enhancd
+  zplug 'b4b4r07/gomi', as:command, from:gh-r # 消したファイルをゴミ箱から復元できるrmコマンド代替 … https://github.com/b4b4r07/gomi
   zplug check || zplug install
   zplug load
 }

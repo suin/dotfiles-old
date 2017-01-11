@@ -31,7 +31,6 @@ formula=(
 	vimpager
 	wget
 	yarn
-	zplug
 	zsh
 )
 
