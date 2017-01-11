@@ -2,10 +2,10 @@
   typeset -U path cdpath fpath manpath # 重複する要素を自動的に削除
 
   path=(
-    $HOME/bin(N-/)
-    /usr/local/bin(N-/)
-    /usr/local/sbin(N-/)
-    $HOME/go/bin(N-/)
+    $HOME/bin(N-/) # 自作コマンド等
+    /usr/local/bin(N-/) # homebrew
+    /usr/local/sbin(N-/) # homebrew
+    $HOME/go/bin(N-/) # go getでインストールしたコマンド
     $path
   )
 
