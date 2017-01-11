@@ -6,6 +6,7 @@
   unsetopt auto_menu # タブによるファイルの順番切り替えをしない
   setopt auto_pushd # cd -[tab]で過去のディレクトリにひとっ飛びできるようにする
   setopt auto_cd # ディレクトリ名を入力するだけでcdできるようにする
+  setopt interactive_comments # コマンドラインでも # 以降をコメントと見なす
 
   : "ヒストリ" && {
     HISTFILE=$HOME/.zsh_history # ヒストリファイル名
@@ -21,11 +22,25 @@
 
   : "キーバインディング" && {
     bindkey -e # emacs キーマップを選択
-    function cd-up { zle push-line && LBUFFER='builtin cd ..' && zle accept-line }
-    zle -N cd-up # Zsh Line Editorに上記コマンドを登録
-    bindkey "^Y" cd-up # Ctrl-Yで上のディレクトリに上がる
-    setopt ignoreeof # ^Dでログアウトしない。
-    autoload -U select-word-style && select-word-style bash # Ctrl-Wでパスの文字列などをスラッシュ単位でdeleteできる
+    : "Ctrl-Yで上のディレクトリに移動できる" && {
+      function cd-up { zle push-line && LBUFFER='builtin cd ..' && zle accept-line }
+      zle -N cd-up
+      bindkey "^Y" cd-up
+    }
+    : "Ctrl-Dでシェルからログアウトしない" && {
+      setopt ignoreeof
+    }
+    : "Ctrl-Wでパスの文字列などをスラッシュ単位でdeleteできる" && {
+      autoload -U select-word-style
+      select-word-style bash
+    }
+    : "Ctrl-[で直前コマンドの単語を挿入できる" && {
+      autoload -Uz smart-insert-last-word
+      zstyle :insert-last-word match '*([[:alpha:]/\\]?|?[[:alpha:]/\\])*' # [a-zA-Z], /, \ のうち少なくとも1文字を含む長さ2以上の単語
+      zle -N insert-last-word smart-insert-last-word
+      bindkey '^[' insert-last-word
+      # see http://qiita.com/mollifier/items/1a9126b2200bcbaf515f
+    }
   }
 }
 
@@ -35,7 +50,7 @@
   alias la="ls -la"
   alias l1="ls -1"
   alias tree="tree -NC" # N: 文字化け対策, C:色をつける
-  alias -g and="|" # パイプが遠いのでandを割り当てる
+  alias -g and="|" # パイプが遠いのでandを割り当てる。例えば`tail -f ./log | grep error`を`tail -f ./log and grep error`と書くことができる
 }
 
 : "プラグイン" && {
@@ -57,7 +72,7 @@
   zplug load
 }
 
-: "cdした後にファイル一覧を表示する" && {
+: "cd先のディレクトリのファイル一覧を表示する" && {
   [ -z "$ENHANCD_ROOT" ] && function chpwd { tree -L 1 } # enhancdがない場合
   [ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="tree -L 1" # enhancdがあるときはそのHook機構を使う
 }
