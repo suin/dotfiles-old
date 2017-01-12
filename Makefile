@@ -7,6 +7,7 @@ dotfiles:
 
 commands:
 	./install-commands-via-homebrew.sh
+	./install-commands-via-gem.sh
 	./install-commands-via-go-get.sh
 
 more:
