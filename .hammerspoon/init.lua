@@ -25,7 +25,7 @@ end
 
 local function handleGlobalAppEvent(name, event, app)
    if event == hs.application.watcher.activated then
-      -- hs.alert.show(name)
+      -- アプリの切り替えを監視して、対象が iTerm2 だったらキーリマップを無効にする
       if name ~= "iTerm2" then
          enableAllHotkeys()
       else
@@ -37,10 +37,16 @@ end
 appsWatcher = hs.application.watcher.new(handleGlobalAppEvent)
 appsWatcher:start()
 
-remapKey({'ctrl'}, 'p', keyCode('up'))
+-- カーソル移動
+remapKey({'ctrl'}, 'f', keyCode('right'))
+remapKey({'ctrl'}, 'b', keyCode('left'))
 remapKey({'ctrl'}, 'n', keyCode('down'))
+remapKey({'ctrl'}, 'p', keyCode('up'))
+
+-- 削除
 remapKey({'ctrl'}, 'h', keyCode('delete'))
 remapKey({'ctrl'}, 'u', keyCode('delete', {'cmd'}))
+remapKey({'ctrl'}, 'w', keyCode('delete', {'alt'}))
 
 -- Ctrl-J でリターン
 remapKey({'ctrl'}, 'j', keyCode('return'))
