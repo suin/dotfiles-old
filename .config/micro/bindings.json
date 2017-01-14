@@ -1,0 +1,7 @@
+{
+  "CtrlP": "CursorUp",
+  "CtrlN": "CursorDown",
+  "CtrlB": "CursorLeft",
+  "CtrlF": "CursorRight",
+  "Alt-s": "Save,Quit"
+}
