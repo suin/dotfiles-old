@@ -21,6 +21,7 @@ set -eux
 		ngrok
 		httpie
 		hub
+		micro # A modern and intuitive terminal-based text editor https://micro-editor.github.io
 		node
 		reattach-to-user-namespace
 		pandoc

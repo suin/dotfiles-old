@@ -22,7 +22,7 @@
 	excludesfile = /Users/suin/.gitignore
 	pager = less -r
 	quotepath = false
-	editor = "cot -w"
+	editor = micro
 
 [grep]
 	lineNumber = true

@@ -48,9 +48,9 @@ remapKey({'ctrl'}, 'h', keyCode('delete'))
 remapKey({'ctrl'}, 'u', keyCode('delete', {'cmd'}))
 remapKey({'ctrl'}, 'w', keyCode('delete', {'alt'}))
 
--- Ctrl-J でリターン
-remapKey({'ctrl'}, 'j', keyCode('return'))
-remapKey({'ctrl', 'cmd'}, 'j', keyCode('return', {'cmd'}))
-remapKey({'ctrl', 'alt'}, 'j', keyCode('return', {'alt'}))
-remapKey({'ctrl', 'shift'}, 'j', keyCode('return', {'shift'}))
+-- Ctrl-M でリターン
+remapKey({'ctrl'}, 'm', keyCode('return'))
+remapKey({'ctrl', 'cmd'}, 'm', keyCode('return', {'cmd'}))
+remapKey({'ctrl', 'alt'}, 'm', keyCode('return', {'alt'}))
+remapKey({'ctrl', 'shift'}, 'm', keyCode('return', {'shift'}))
 remapKey({'cmd'}, 'm', keyCode('f20')) -- ⌘Mの誤打が多いので無効化する
