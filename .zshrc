@@ -51,6 +51,11 @@
   alias l1="ls -1"
   alias tree="tree -NC" # N: 文字化け対策, C:色をつける
   alias -g and="|" # パイプが遠いのでandを割り当てる。例えば`tail -f ./log | grep error`を`tail -f ./log and grep error`と書くことができる
+  alias pul="git pull"
+  alias pus="git push"
+  alias com="git commit -a"
+  alias add="git add -A"
+  alias st="git status -s"
 }
 
 : "プラグイン" && {
