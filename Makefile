@@ -12,5 +12,6 @@ commands:
 
 more:
 	./setup-file-icons.sh
+	./setup-wallpapers.sh
 
 all: commands dotfiles
