@@ -11,6 +11,12 @@
 
   path=(
     $(yarn global bin)(N-/) # yarnでインストールしたコマンド
+    $HOME/.config/yarn/global/node_modules/.bin(N-/) # yarnでインストールしたコマンド(https://github.com/yarnpkg/yarn/issues/648 が解決されるまで必要)
+    $path
+  )
+
+  path=(
+    $HOME/.Pokemon-Terminal(N-/)
     $path
   )
 

@@ -13,7 +13,7 @@ WALLPAPER_DIR=~/Dropbox/open/wallpapers
 }
 
 : "Set wallpapers" && {
-  for keycode in 18 19 20 21 23 22 26 28 25 29
+  for keycode in 18 19 20 21 23 22 26 28 25 29 32
   do
     osascript -e "tell application \"System Events\" to key code $keycode using control down"
     sleep 1
