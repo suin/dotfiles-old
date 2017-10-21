@@ -16,6 +16,11 @@
   )
 
   path=(
+    $HOME/.composer/vendor/bin # composerでインストールしたコマンド
+    $path
+  )
+
+  path=(
     $HOME/.Pokemon-Terminal(N-/)
     $path
   )

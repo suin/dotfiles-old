@@ -1,3 +1,4 @@
 /cache
 /.htaccess
 /auth.json
+/vendor
