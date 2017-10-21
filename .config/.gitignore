@@ -1,3 +1,6 @@
 /hub
 /yarn
 /micro/buffers
+/.isolated-storage
+/toggl-cli
+/configstore
