@@ -76,6 +76,7 @@
   abbrev-alias gs="git status -s"
   abbrev-alias dp="docker ps"
   abbrev-alias di="docker images"
+  abbrev-alias dce="docker-compose exec"
   abbrev-alias edi="eval \$(dinghy env)"
   abbrev-alias -g a1="awk '{print \$1}'"
   abbrev-alias -g a2="awk '{print \$2}'"
