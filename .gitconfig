@@ -134,5 +134,5 @@
 	required = true
 
 [commit]
-	template = .gitmessage
 	template = ~/.gitmessage
+	template = .gitmessage
