@@ -3,5 +3,9 @@
   "CtrlN": "CursorDown",
   "CtrlB": "CursorLeft",
   "CtrlF": "CursorRight",
+  "CtrlW": "DeleteWordLeft",
+  "CtrlU": "DeleteLine",
+  "CtrlA": "StartOfLine",
+  "CtrlE": "EndOfLine",
   "Alt-s": "Save,Quit"
 }
