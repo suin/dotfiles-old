@@ -14,6 +14,7 @@ set -eux
 		cot # The command-line helper tool for CotEditor. https://coteditor.com
 		curl
 		dinghy
+		direnv
 		docker
 		docker-machine
 		docker-compose

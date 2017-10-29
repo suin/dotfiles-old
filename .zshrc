@@ -108,3 +108,7 @@
 
 # added by travis gem
 [ -f /Users/suin/.travis/travis.sh ] && source /Users/suin/.travis/travis.sh
+
+: "direnv" && {
+  type direnv > /dev/null && eval "$(direnv hook zsh)"
+}
