@@ -65,9 +65,18 @@
 }
 
 : "略語展開(iab)" && {
-  abbrev-alias l="ls -laG" # G: macOSで色を付ける
-  abbrev-alias la="ls -lahG"
-  abbrev-alias l1="ls -1G"
+  : "exaが導入済みならlsの代わりにexaを使う" && {
+      type exa > /dev/null && {
+        abbrev-alias ls="exa"
+        abbrev-alias l="exa"
+        abbrev-alias la="exa -alhg --group-directories-first --git --time-style long-iso"
+        abbrev-alias l1="exa -1"
+      } || {
+        abbrev-alias l="ls -laG" # G: macOSで色を付ける
+        abbrev-alias la="ls -lahG"
+        abbrev-alias l1="ls -1G"
+      }
+  }
   abbrev-alias tree="tree -NC" # N: 文字化け対策, C:色をつける
   abbrev-alias gpl="git pull"
   abbrev-alias gps="git push"

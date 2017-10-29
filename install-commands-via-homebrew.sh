@@ -14,10 +14,11 @@ set -eux
 		cot # The command-line helper tool for CotEditor. https://coteditor.com
 		curl
 		dinghy
-		direnv
+		direnv # An environment switcher for the shell.
 		docker
 		docker-machine
 		docker-compose
+		exa # Replacement for 'ls' written in Rust.
 		git
 		ngrok
 		httpie
