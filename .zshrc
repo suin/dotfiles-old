@@ -121,3 +121,7 @@
 : "direnv" && {
   type direnv > /dev/null && eval "$(direnv hook zsh)"
 }
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[[ -f /Users/suin/Dropbox/open/dotfiles/.config/yarn/global/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/suin/Dropbox/open/dotfiles/.config/yarn/global/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh

@@ -45,7 +45,7 @@
 	difflog = log -p HEAD@{3.days.ago}
 	fo = fetch origin
 	find-rev = "!sh -c 'git log -1 --grep=\"^git-svn-id: [^ ]*@${1#r} \" --format=%H' _"
-	first = !"git init -q && git commit -q --allow-empty -m 'init'"
+	first = !"git init -q && git commit -q --allow-empty -m 'Initial commit.'"
 	fixup = commit --amend -a -C HEAD
 	gr = grep -H --heading --break
 	gene = log --graph --pretty='%C(yellow)%h%Creset %ai %an: %s%C(yellow)%d%Creset' --all
@@ -94,6 +94,14 @@
 	pr = "!f() { branch_name=$(git symbolic-ref --short -q HEAD); ticket_no=$(echo ${branch_name##*/}); git push origin $branch_name; hub pull-request -i $ticket_no -h $branch_name; }; f"
 	done = "!f() { branch_name=$(git symbolic-ref --short -q HEAD); git checkout master; git pull --prune; git branch -d $branch_name; }; f"
 
+	sqnoff = "!set -eux && \
+target=$(git rev-parse --abbrev-ref HEAD) && \
+git checkout $1 && \
+git reset --soft $target && \
+git commit && \
+git checkout $target && \
+git merge --no-ff --no-edit $1"
+
 [http]
 	sslVerify = true
 
@@ -133,6 +141,12 @@
 	process = git-lfs filter-process
 	required = true
 
+[tig "bind"]
+	diff = F ?!git commit --fixup %(commit)
+	diff = S ?!git commit --squash %(commit)
+	main = F ?!git commit --fixup %(commit)
+	main = S ?!git commit --squash %(commit)
+
 [commit]
-	template = ~/.gitmessage
-	template = .gitmessage
+#	template = ~/.gitmessage
+#	template = .gitmessage

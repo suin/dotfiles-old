@@ -42,6 +42,10 @@ remapKey({'ctrl'}, 'f', keyCode('right'))
 remapKey({'ctrl'}, 'b', keyCode('left'))
 remapKey({'ctrl'}, 'n', keyCode('down'))
 remapKey({'ctrl'}, 'p', keyCode('up'))
+remapKey({'ctrl', 'shift'}, 'f', keyCode('right', {'shift'}))
+remapKey({'ctrl', 'shift'}, 'b', keyCode('left', {'shift'}))
+remapKey({'ctrl', 'shift'}, 'n', keyCode('down', {'shift'}))
+remapKey({'ctrl', 'shift'}, 'p', keyCode('up', {'shift'}))
 
 -- 削除
 remapKey({'ctrl'}, 'h', keyCode('delete'))

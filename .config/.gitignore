@@ -4,3 +4,4 @@
 /.isolated-storage
 /toggl-cli
 /configstore
+/direnv

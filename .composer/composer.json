@@ -1,5 +1,6 @@
 {
     "require": {
-        "jonathantorres/construct": "^1.15"
+        "jonathantorres/construct": "^1.15",
+        "hirak/prestissimo": "^0.3.7"
     }
 }
