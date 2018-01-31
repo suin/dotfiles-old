@@ -23,7 +23,7 @@ brew "hub"
 brew "jq"
 brew "micro" # コミットメッセージをちょちょっと書くのに便利なエディタ
 brew "node"
-brew "ngrok" # localhostを一時的に外部から見られるウェブページにするツール
+cask "ngrok" # localhostを一時的に外部から見られるウェブページにするツール
 brew "nkf" # 文字コード変換
 brew "nmap" # ポートスキャナ
 brew "optipng" # png画像の容量減らすツール
