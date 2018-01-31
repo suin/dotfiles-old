@@ -6,7 +6,7 @@ dotfiles:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
 commands: launchpad
-	brew bundle
+	brew bundle --verbose
 	./install-commands-via-gem.sh
 	./install-commands-via-go-get.sh
 
