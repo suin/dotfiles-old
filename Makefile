@@ -8,7 +8,7 @@ dotfiles:
 commands: launchpad
 	brew bundle --verbose
 	./install-commands-via-gem.sh
-	./install-commands-via-go-get.sh
+	# ./install-commands-via-go-get.sh
 
 more:
 	./setup-file-icons.sh
