@@ -1,5 +1,6 @@
 /hub
-/yarn
+/yarn/link
+/yarn/global/node_modules
 /micro/buffers
 /.isolated-storage
 /toggl-cli

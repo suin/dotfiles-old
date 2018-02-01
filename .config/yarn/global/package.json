@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "fileicon": "^0.2.1",
+    "write-good": "^0.11.3",
+    "yarn-completions": "^0.0.8"
+  }
+}
