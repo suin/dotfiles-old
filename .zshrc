@@ -1,5 +1,5 @@
 : "一般的な設定" && {
-  autoload -U compinit && compinit # 補完機能の強化
+  autoload -U compinit && compinit -d ${COMPDUMPFILE} # 補完機能の強化
   setopt correct # 入力しているコマンド名が間違っている場合にもしかして：を出す。
   setopt nobeep # ビープを鳴らさない
   setopt no_tify # バックグラウンドジョブが終了したらすぐに知らせる。
@@ -10,7 +10,6 @@
 }
 
 : "ヒストリ関連の設定" && {
-  HISTFILE=$HOME/.zsh_history # ヒストリファイル名
   HISTSIZE=10000 # メモリに保存される履歴の件数
   SAVEHIST=10000 # 履歴ファイルに保存される履歴の件数
   setopt hist_ignore_dups # 直前と同じコマンドをヒストリに追加しない

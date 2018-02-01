@@ -43,3 +43,9 @@
   export COMPOSE_FILE=docker-compose.development.yml # see https://suin.io/535
   export GIT_FORGOT_DIR="$HOME/Dropbox/open/* $HOME/Dropbox/projects/*" # see http://qiita.com/suin/items/dde9204193bddefe8107
 }
+
+: "HOMEにドットファイルが沢山できる問題を防ぐ" && {
+  export HISTFILE=~/.data/zsh_history # ヒストリファイル名
+  export COMPDUMPFILE=~/.data/zcompdump # コマンド補完データ
+  export ENHANCD_DIR=~/.data/enhancd # https://github.com/b4b4r07/enhancd ... A next-generation cd command with an interactive filter
+}
