@@ -77,7 +77,7 @@ cask "typora"
 cask "tunnelblick"
 
 mas "1Password", id: 443987910
-mas "Affinity Designer", id: 824171161
+# mas "Affinity Designer", id: 824171161
 mas "BatteryHero", id: 782015477
 mas "CotEditor", id: 1024640650
 mas "Day One", id: 1055511498
