@@ -23,6 +23,7 @@
 	pager = less -r
 	quotepath = false
 	editor = micro
+	commentchar = ";"
 
 [grep]
 	lineNumber = true
