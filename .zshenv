@@ -28,6 +28,7 @@
   cdpath=(
     $HOME/Dropbox/open(N-/)
     $HOME/Dropbox/projects(N-/)
+    $HOME/Sync/p(N-/)
     $cdpath
   )
 }
