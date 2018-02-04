@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "fileicon": "^0.2.1",
+    "npm": "^5.6.0",
     "write-good": "^0.11.3",
     "yarn-completions": "^0.0.8"
   }
