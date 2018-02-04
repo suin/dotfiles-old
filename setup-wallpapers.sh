@@ -2,7 +2,7 @@
 
 set -eux
 
-WALLPAPER_DIR=~/Dropbox/open/wallpapers
+WALLPAPER_DIR=~/Dropbox/system/wallpapers
 
 : "Check if wallpaper directory exists" && {
   [ -d "$WALLPAPER_DIR" ] || exit
