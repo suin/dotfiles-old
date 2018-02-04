@@ -18,6 +18,7 @@ brew "git"
 brew "git-lfs"
 brew "git-now" # git commitを一番カジュアルにできるツール
 brew "go"
+brew "hostess" # /etc/hostsを管理するツール
 brew "httpie"
 brew "hub"
 brew "jq"
