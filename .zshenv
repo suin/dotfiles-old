@@ -29,6 +29,7 @@
     $HOME/Dropbox/open(N-/)
     $HOME/Dropbox/projects(N-/)
     $HOME/Sync/p(N-/)
+    /Volumes/casesensitive(N-/)
     $cdpath
   )
 }
