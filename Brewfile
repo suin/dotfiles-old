@@ -52,6 +52,7 @@ cask "atom"
 cask "alfred"
 cask "bartender"
 cask "bitbar"
+cask "coderunner"
 cask "daisydisk"
 cask "docker"
 cask "expandrive"
@@ -69,6 +70,7 @@ cask "macs-fan-control"
 cask "nanowallet"
 cask "libreoffice"
 cask "postico"
+cask "quitter"
 cask "sequel-pro"
 cask "setapp"
 cask "skype"
@@ -81,7 +83,6 @@ cask "tunnelblick"
 mas "1Password", id: 443987910
 # mas "Affinity Designer", id: 824171161
 mas "BatteryHero", id: 782015477
-mas "CodeRunner 2", id: 955297617
 mas "CotEditor", id: 1024640650
 mas "Day One", id: 1055511498
 mas "Dropshelf", id: 540404405
