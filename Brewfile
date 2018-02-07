@@ -81,6 +81,7 @@ cask "tunnelblick"
 mas "1Password", id: 443987910
 # mas "Affinity Designer", id: 824171161
 mas "BatteryHero", id: 782015477
+mas "CodeRunner 2", id: 955297617
 mas "CotEditor", id: 1024640650
 mas "Day One", id: 1055511498
 mas "Dropshelf", id: 540404405
