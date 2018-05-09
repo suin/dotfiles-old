@@ -49,7 +49,9 @@
   source $ZPLUG_HOME/init.zsh
   zplug "zsh-users/zsh-completions" # 多くのコマンドに対応する入力補完 … https://github.com/zsh-users/zsh-completions
   zplug "mafredri/zsh-async" # "sindresorhus/pure"が依存している
-  zplug "sindresorhus/pure", use:pure.zsh, as:theme # 美しく最小限で高速なプロンプト … https://github.com/sindresorhus/pure
+  zplug "sindresorhus/pure", use:pure.zsh, as:theme && { # 美しく最小限で高速なプロンプト … https://github.com/sindresorhus/pure
+    export PURE_PROMPT_SYMBOL="❯❯❯"
+  }
   zplug "zsh-users/zsh-syntax-highlighting", defer:2 # fishシェル風のシンタクスハイライト … https://github.com/zsh-users/zsh-syntax-highlighting
   zplug "supercrabtree/k" # git情報を含んだファイルリストを表示するコマンド … https://github.com/supercrabtree/k
   zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf # あいまい検索ができるコマンド … https://github.com/junegunn/fzf
