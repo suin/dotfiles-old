@@ -132,9 +132,9 @@ git merge --no-ff --no-edit $1"
 	smudge = git media smudge %f
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -151,3 +151,5 @@ git merge --no-ff --no-edit $1"
 [commit]
 #	template = ~/.gitmessage
 #	template = .gitmessage
+[commit]
+	template = /Users/suin/.stCommitMsg

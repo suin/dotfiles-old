@@ -187,7 +187,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 364 620 392 0 0 1440 878 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>315 248 796 473 0 0 1440 878 </string>
+	<string>320 288 796 473 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 170 1440 708 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
@@ -841,7 +841,7 @@
 				</dict>
 			</array>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -1584,7 +1584,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-01T00:00:19Z</date>
+	<date>2018-06-26T16:32:38Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -1602,7 +1602,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

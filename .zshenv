@@ -5,6 +5,7 @@
     $HOME/bin(N-/) # 自作コマンド等
     /usr/local/bin(N-/) # homebrew
     /usr/local/sbin(N-/) # homebrew
+    /usr/local/opt/php@7.1/bin (N-/) # brew install php71
     $HOME/go/bin(N-/) # go getでインストールしたコマンド
     $path
   )
