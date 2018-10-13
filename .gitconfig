@@ -2,22 +2,6 @@
 	name = suin
 	email = suinyeze@gmail.com
 
-[apply]
-	whitespace = nowarn
-
-[color]
-	ui = auto
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-
 [core]
 	excludesfile = /Users/suin/.gitignore
 	pager = less -r
@@ -25,86 +9,31 @@
 	editor = micro
 	commentchar = ";"
 
+[color]
+	ui = auto
+
+[pull]
+  rebase = preserve
+
+[push] ; https://git-scm.com/docs/git-push
+	; Push git commits & tags simultaneously.
+	; You may override this configuration at time of push by specifying --no-follow-tags.
+  followTags = true
+
+[commit] ; https://git-scm.com/docs/git-commit
+	template = ~/.gitmessage ; When editing the commit message, start the editor with the contents in the given file.
+
+[fetch] ; https://git-scm.com/docs/git-fetch
+	prune = true ; Before fetching, remove any remote-tracking references that no longer exist on the remote.
+
+[rebase]
+	preserve-merges = true
+
+[apply] ; https://git-scm.com/docs/git-apply
+	whitespace = nowarn ; turns off the trailing whitespace warning.
+
 [grep]
 	lineNumber = true
-
-[alias]
-	b = branch
-	br = branch -a
-	ci = commit -vs
-	cia = commit --amend
-	cih = commit --amend -C HEAD
-	co = checkout
-	cob = checkout -b
-	d1 = diff HEAD~
-	d2 = diff HEAD~~
-	d3 = diff HEAD~~~
-	d4 = diff HEAD~~~~
-	dc = diff --cached
-	dcw = diff --color-words
-	di = diff
-	difflog = log -p HEAD@{3.days.ago}
-	fo = fetch origin
-	find-rev = "!sh -c 'git log -1 --grep=\"^git-svn-id: [^ ]*@${1#r} \" --format=%H' _"
-	first = !"git init -q && git commit -q --allow-empty -m 'Initial commit.'"
-	fixup = commit --amend -a -C HEAD
-	gr = grep -H --heading --break
-	gene = log --graph --pretty='%C(yellow)%h%Creset %ai %an: %s%C(yellow)%d%Creset' --all
-	l = log --stat --date=local
-	l1 = log --pretty=oneline --abbrev-commit
-	l1f = log --pretty=oneline
-	lg = log --name-status --color --graph --date=local
-	log-graph = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
-	log-all = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
-	newly = log HEAD@{1}..HEAD --reverse
-	newlyp = log HEAD@{1}..HEAD -p --reverse
-	package = !"git archive --format=tar --prefix=$(basename $(pwd))/ HEAD | gzip > $(basename $(pwd)).tar.gz"
-	pl = pull
-	pr = pull --rebase
-	ps = push
-	ranking = shortlog -sn
-	rb = rebase
-	rc = rebase --continue
-	rbh = rebase HEAD
-	ro = rebase origin
-	rollback = reset --hard HEAD~
-	see = browse
-	show-rev = "!sh -c 'git log -1 --grep=\"^git-svn-id: [^ ]*@${1#r} \" -p' _"
-	sl = stash list
-	smi = submodule init
-	smp = submodule foreach "git pull"
-	smcp = submodule foreach "git checkout master; git pull origin master"
-	smu = submodule update
-	sh = show
-	so = remote show origin
-	sp = stash pop
-	ss = stash save
-	st = status -sb
-	tree = log --graph --pretty=oneline --abbrev-commit --decorate
-	up = pull --rebase
-	view = log --pretty=oneline --abbrev-commit --graph --source --tags --branches
-	squash = merge --squash
-	mktopic = checkout -b
-	merge-noff-nocommit = merge --no-ff --no-commit
-	merge-noff = merge --no-ff
-	begin-featrue = flow feature start
-	finish-feature = flow feature finish -k
-	ll = log --pretty="%s"
-
-	begin = "!f() { git checkout -b issues/$1; }; f"
-	pr = "!f() { branch_name=$(git symbolic-ref --short -q HEAD); ticket_no=$(echo ${branch_name##*/}); git push origin $branch_name; hub pull-request -i $ticket_no -h $branch_name; }; f"
-	done = "!f() { branch_name=$(git symbolic-ref --short -q HEAD); git checkout master; git pull --prune; git branch -d $branch_name; }; f"
-
-	sqnoff = "!set -eux && \
-target=$(git rev-parse --abbrev-ref HEAD) && \
-git checkout $1 && \
-git reset --soft $target && \
-git commit && \
-git checkout $target && \
-git merge --no-ff --no-edit $1"
-
-[http]
-	sslVerify = true
 
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -123,24 +52,8 @@ git merge --no-ff --no-edit $1"
 	prompt = false
 
 [merge]
+	ff = false
 	tool = Kaleidoscope
-[push]
-	default = simple
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 
 [tig "bind"]
 	diff = F ?!git commit --fixup %(commit)
@@ -148,8 +61,6 @@ git merge --no-ff --no-edit $1"
 	main = F ?!git commit --fixup %(commit)
 	main = S ?!git commit --squash %(commit)
 
-[commit]
-#	template = ~/.gitmessage
-#	template = .gitmessage
-[commit]
-	template = /Users/suin/.stCommitMsg
+[alias]
+	b = branch
+	br = branch -a

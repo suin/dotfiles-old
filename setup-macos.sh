@@ -128,6 +128,16 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 #sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
 
 ###############################################################################
+# Login window                                                                #
+###############################################################################
+
+# Show name and password
+sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME -bool true
+
+# Disable guest login
+sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
+
+###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
 
@@ -926,7 +936,6 @@ for app in "Activity Monitor" \
 	"SizeUp" \
 	"Spectacle" \
 	"SystemUIServer" \
-	"Terminal" \
 	"Transmission" \
 	"Tweetbot" \
 	"Twitter" \
