@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # ~/.macos — https://mths.be/macos
-set -x
+set -eux
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -96,7 +96,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 }
 
 : "Launchpad" && {
-	"Increase Launchpad grid" && {
+	: "Increase Launchpad grid" && {
 		defaults write com.apple.dock springboard-columns -int 12
 		defaults write com.apple.dock springboard-rows -int 8
 	}
@@ -614,7 +614,7 @@ defaults write com.apple.dock showhidden -bool true
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+# hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # Activity Monitor                                                            #
@@ -693,6 +693,8 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
+
+set +e
 
 for app in "Activity Monitor" \
 	"Address Book" \
