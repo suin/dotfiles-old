@@ -2,7 +2,7 @@
   typeset -U path cdpath fpath manpath # 重複する要素を自動的に削除
 
   path=(
-    $HOME/bin(N-/) # 自作コマンド等
+    $HOME/Documents/system/bin(N-/) # 自作コマンド等
     /usr/local/bin(N-/) # homebrew
     /usr/local/sbin(N-/) # homebrew
     /usr/local/opt/php@7.1/bin (N-/) # brew install php71
@@ -27,10 +27,8 @@
   )
 
   cdpath=(
-    $HOME/Dropbox/open(N-/)
-    $HOME/Dropbox/projects(N-/)
-    $HOME/Sync/p(N-/)
-    /Volumes/casesensitive(N-/)
+    $HOME/Documents/system(N-/)
+    /Volumes/dev(N-/)
     $cdpath
   )
 }
