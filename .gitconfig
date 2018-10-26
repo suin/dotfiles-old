@@ -64,3 +64,6 @@
 [alias]
 	b = branch
 	br = branch -a
+
+[remind]
+	paths = /Users/suin/go/src/github.com/suin/*,/Volumes/dev/*
