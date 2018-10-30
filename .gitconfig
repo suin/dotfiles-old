@@ -66,4 +66,4 @@
 	br = branch -a
 
 [remind]
-	paths = /Users/suin/go/src/github.com/suin/*,/Volumes/dev/*
+ 	paths = /Users/suin/go/src/github.com/suin/*,/Volumes/dev/*
