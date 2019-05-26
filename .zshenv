@@ -10,11 +10,13 @@
     $path
   )
 
-  path=(
-    $(yarn global bin)(N-/) # yarnでインストールしたコマンド
-    $HOME/.config/yarn/global/node_modules/.bin(N-/) # yarnでインストールしたコマンド(https://github.com/yarnpkg/yarn/issues/648 が解決されるまで必要)
-    $path
-  )
+  type yarn > /dev/null && {
+    path=(
+      $(yarn global bin)(N-/) # yarnでインストールしたコマンド
+      $HOME/.config/yarn/global/node_modules/.bin(N-/) # yarnでインストールしたコマンド(https://github.com/yarnpkg/yarn/issues/648 が解決されるまで必要)
+      $path
+    )
+  }
 
   path=(
     $HOME/.composer/vendor/bin # composerでインストールしたコマンド
@@ -24,6 +26,11 @@
   path=(
     $HOME/.Pokemon-Terminal(N-/)
     $path
+  )
+
+  path=(
+    $path
+    $HOME/Documents/system/linuxenv/bin(N-/) # linuxenv
   )
 
   cdpath=(
