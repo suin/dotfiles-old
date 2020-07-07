@@ -10,7 +10,7 @@
     "fileicon": "^0.2.1",
     "gatsby-cli": "^1.1.45",
     "node-gyp": "^3.6.2",
-    "npm": "^5.6.0",
+    "npm": "^6.14.6",
     "speed-test": "^2.0.0",
     "write-good": "^0.11.3",
     "yarn-completions": "^0.0.8"
