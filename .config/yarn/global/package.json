@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@google/clasp": "^1.1.5",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "dtsmake": "^0.0.10",
