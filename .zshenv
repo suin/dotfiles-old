@@ -1,36 +1,41 @@
 : "パス" && {
   typeset -U path cdpath fpath manpath # 重複する要素を自動的に削除
 
-  path=(
+  mypath=(
     $HOME/Documents/system/bin(N-/) # 自作コマンド等
     /usr/local/bin(N-/) # homebrew
     /usr/local/sbin(N-/) # homebrew
     /usr/local/opt/php@7.1/bin (N-/) # brew install php71
     $HOME/go/bin(N-/) # go getでインストールしたコマンド
-    $path
+    /usr/local/opt/ruby/bin
+    /usr/local/lib/ruby/gems/2.7.0/bin
   )
 
   type yarn > /dev/null && {
-    path=(
+    mypath=(
+      $mypath
       $(yarn global bin)(N-/) # yarnでインストールしたコマンド
-      $HOME/.config/yarn/global/node_modules/.bin(N-/) # yarnでインストールしたコマンド(https://github.com/yarnpkg/yarn/issues/648 が解決されるまで必要)
-      $path
     )
   }
 
-  path=(
+  mypath=(
+    $mypath
     $HOME/.composer/vendor/bin # composerでインストールしたコマンド
-    $path
   )
 
-  path=(
+  mypath=(
+    $mypath
     $HOME/.Pokemon-Terminal(N-/)
-    $path
+  )
+
+  mypath=(
+    $mypath
+    $HOME/Documents/system/linuxenv/bin(N-/) # linuxenv
   )
 
   path=(
+    $mypath
     $path
-    $HOME/Documents/system/linuxenv/bin(N-/) # linuxenv
   )
 
   cdpath=(
@@ -38,6 +43,11 @@
     /Volumes/dev(N-/)
     $cdpath
   )
+
+  [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ] && {
+    source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+    source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+  }
 }
 
 : "環境変数" && {
@@ -47,7 +57,7 @@
   export EDITOR=/usr/local/bin/vim
   export PAGER=/usr/local/bin/vimpager
   export MANPAGER=/usr/local/bin/vimpager
-  export GOPATH=/Users/suin/go
+  export GOPATH=/Volumes/dev/go
   export COMPOSE_FILE=docker-compose.development.yml # see https://suin.io/535
   export GIT_FORGOT_DIR="$HOME/Dropbox/open/* $HOME/Dropbox/projects/*" # see http://qiita.com/suin/items/dde9204193bddefe8107
 }

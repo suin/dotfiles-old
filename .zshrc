@@ -1,5 +1,5 @@
 : "一般的な設定" && {
-  autoload -U compinit && compinit -d ${COMPDUMPFILE} # 補完機能の強化
+  autoload -U compinit && compinit -u -d ${COMPDUMPFILE} # 補完機能の強化
   setopt correct # 入力しているコマンド名が間違っている場合にもしかして：を出す。
   setopt nobeep # ビープを鳴らさない
   setopt no_tify # バックグラウンドジョブが終了したらすぐに知らせる。
@@ -7,6 +7,14 @@
   setopt auto_pushd # cd -[tab]で過去のディレクトリにひとっ飛びできるようにする
   setopt auto_cd # ディレクトリ名を入力するだけでcdできるようにする
   setopt interactive_comments # コマンドラインでも # 以降をコメントと見なす
+}
+
+: "Multi-user Hack" && {
+    compaudit > /dev/null 2>&1 || {
+        echo "Need to change file ownership of zsh completion"
+        sudo -v || exit
+        compaudit 2>/dev/null | sudo xargs chown $(whoami)
+    }
 }
 
 : "ヒストリ関連の設定" && {
@@ -46,6 +54,11 @@
 : "プラグイン" && {
   export ZPLUG_HOME=/usr/local/opt/zplug
   [ -f "$ZPLUG_HOME/init.zsh" ] || brew install zplug # zplugはHomebrewからインストール
+
+  : "Multi-user Hack" && {
+        [ "$(stat -f '%u' $ZPLUG_HOME/)" = "$(id -u)" ] ||  sudo chown -R $(whoami) $ZPLUG_HOME/
+  }
+
   source $ZPLUG_HOME/init.zsh
   zplug "zsh-users/zsh-completions" # 多くのコマンドに対応する入力補完 … https://github.com/zsh-users/zsh-completions
   zplug "mafredri/zsh-async" # "sindresorhus/pure"が依存している
@@ -122,6 +135,15 @@
 
 : "direnv" && {
   type direnv > /dev/null && eval "$(direnv hook zsh)"
+}
+
+# : "nvm" && {
+#   export NVM_DIR="$HOME/.nvm"
+#   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+#   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# }
+: "fnm" && {
+  eval "$(fnm env --multi)"
 }
 
 # tabtab source for yarn package
